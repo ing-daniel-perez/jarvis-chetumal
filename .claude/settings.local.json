@@ -23,7 +23,15 @@
       "Bash(docker pull *)",
       "Bash(curl -s --max-time 5 https://registry-1.docker.io/v2/)",
       "Bash(echo \"exit: $?\")",
-      "Bash(lscpu)"
+      "Bash(lscpu)",
+      "WebSearch",
+      "Bash(gh api *)",
+      "Bash(python3 -c \"import sys,json,base64; d=json.load\\(sys.stdin\\); print\\(base64.b64decode\\(d['content']\\).decode\\(\\)\\)\")",
+      "Bash(openssl rand *)",
+      "Bash(curl *)",
+      "Bash(docker run *)",
+      "Bash(chmod 666 /home/daniel/ClusterStorage/configs/searxng/settings.yml)",
+      "Bash(sudo tee *)"
     ]
   }
 }

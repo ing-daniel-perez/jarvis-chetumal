@@ -68,8 +68,42 @@ services:
     image: searxng/searxng:latest
     environment:
       - SEARXNG_BASE_URL=http://10.42.0.154:8888
+      - SEARXNG_SECRET_KEY=jarvis-searxng-2026
+      - SEARXNG_LIMITER=false
+      - SEARXNG_DEFAULT_LANG=es-MX
     ports:
       - "8888:8080"
+    networks:
+      - jarvis-net
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == daniel-B450M-H
+      restart_policy:
+        condition: on-failure
+
+  evolution-api:
+    image: atendai/evolution-api:latest
+    environment:
+      - SERVER_URL=http://10.42.0.154:8090
+      - AUTHENTICATION_TYPE=apikey
+      - AUTHENTICATION_API_KEY=jarvis-evolution-2026
+      - DATABASE_ENABLED=true
+      - DATABASE_PROVIDER=postgresql
+      - DATABASE_CONNECTION_URI=postgresql://jarvis:jarvis_db_2026@postgres:5432/evolution
+      - DATABASE_CONNECTION_CLIENT_NAME=evolution
+      - DATABASE_SAVE_DATA_INSTANCE=true
+      - DATABASE_SAVE_DATA_NEW_MESSAGE=true
+      - DATABASE_SAVE_MESSAGE_UPDATE=true
+      - DATABASE_SAVE_DATA_CONTACTS=true
+      - DATABASE_SAVE_DATA_CHATS=true
+      - LANGUAGE=es-MX
+      - DEL_INSTANCE=false
+    volumes:
+      - /home/daniel/ClusterStorage/data/evolution:/evolution/instances
+    ports:
+      - "8090:8080"
     networks:
       - jarvis-net
     deploy:

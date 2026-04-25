@@ -1,0 +1,39 @@
+general:
+  debug: false
+  instance_name: "Jarvis Search"
+  enable_metrics: false
+
+server:
+  secret_key: "jarvis-searxng-secret-2026"
+  limiter: false
+  image_proxy: true
+  method: "GET"
+
+ui:
+  static_use_hash: true
+  default_locale: "es"
+  default_theme: simple
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "es-MX"
+  formats:
+    - html
+    - json
+
+engines:
+  - name: google
+    engine: google
+    language: es
+    region: mx
+    shortcut: g
+
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: d
+
+  - name: wikipedia
+    engine: wikipedia
+    language: es
+    shortcut: w
