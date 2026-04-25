@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker stack *)",
+      "Bash(docker service *)",
+      "Bash(docker exec *)",
+      "Bash(docker run *)",
+      "Bash(docker rm *)",
+      "Bash(docker network *)",
+      "Bash(docker system *)",
+      "Bash(docker pull *)",
+      "Bash(docker node *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(git config *)",
+      "Bash(git branch *)",
+      "Bash(git init *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(gh auth *)",
+      "Bash(curl *)",
+      "Bash(mkdir -p *)",
+      "Bash(touch *)",
+      "Bash(chmod *)",
+      "Bash(openssl rand *)",
+      "Bash(ss -tlnp *)",
+      "Bash(lscpu *)",
+      "Bash(nproc *)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}
