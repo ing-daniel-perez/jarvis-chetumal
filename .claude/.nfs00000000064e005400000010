@@ -22,8 +22,7 @@
       "Bash(docker system *)",
       "Bash(docker pull *)",
       "Bash(curl -s --max-time 5 https://registry-1.docker.io/v2/)",
-      "Bash(echo \"exit: $?\")",
-      "Bash(lscpu)"
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }

@@ -4,6 +4,9 @@ services:
 
   ollama:
     image: ollama/ollama:latest
+    environment:
+      - OLLAMA_NUM_THREADS=16
+      - OLLAMA_KEEP_ALIVE=-1
     volumes:
       - /home/daniel/ClusterStorage/data/ollama:/root/.ollama
     networks:
@@ -26,6 +29,10 @@ services:
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
       - WEBUI_NAME=Jarvis
+      - RAG_EMBEDDING_ENGINE=ollama
+      - RAG_OLLAMA_BASE_URL=http://ollama:11434
+      - ENABLE_RAG_WEB_SEARCH=False
+      - ENABLE_COMMUNITY_SHARING=False
     volumes:
       - /home/daniel/ClusterStorage/data/webui:/app/backend/data
     ports:
